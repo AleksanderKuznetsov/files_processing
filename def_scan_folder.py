@@ -13,7 +13,7 @@ def scan_top_level(path=os.getcwd()) -> list:
     mass_file = []
     mass_dir = []
     mass = os.listdir(path)  # Получаем содержимое папки.
-    for i, mas in enumerate(mass):  # Проходим циклом по содержимому
+    for i, mas in enumerate(mass):  # Проходим циклом по содержимому.
         join_path = os.path.abspath(mas)
         if os.path.isdir(join_path):
             mass_dir.append(mas)  # Добавим в массив каталоги.
