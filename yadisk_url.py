@@ -27,10 +27,14 @@ def get_url_yadisk(token: str, file_url: str) -> str:
     # Заберем значения первого ключа (массив)
     array = res['items']
 
+    # Циклом пройдем по массиву (внутри - словарь).
     for i, item in enumerate(array):
+        # Получим ключи.
         keys = list(item.keys())
         for key in keys:
+            # Ключ содержит публичную ссылку, и она равна заданной в аргументе функции.
             if key == 'public_url' and item['public_url'] == public_url:
+                # То заберем значение file в этой итерации цикла.
                 download_url = item['file']
                 break
 
