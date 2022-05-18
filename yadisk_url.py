@@ -16,7 +16,9 @@ def get_url_yadisk(token: str, file_url: str) -> str:
     """
     # В ссылке ставим limit=100000, т.к. по умолчанию идет limit=20.
     url = 'https://cloud-api.yandex.net/v1/disk/resources/files?limit=100000'
-    headers = {'Content-Type': 'application/json', 'Accept': 'application/json', 'Authorization': f'OAuth {token}'}
+    headers = {'Content-Type': 'application/json',
+               'Accept': 'application/json',
+               'Authorization': f'OAuth {token}'}
     # Меняем формат ссылки.
     public_url = os.join('https://yadi.sk/i/', os.basename(file_url))
     download_url = 0
@@ -33,9 +35,3 @@ def get_url_yadisk(token: str, file_url: str) -> str:
                 break
 
     return download_url
-
-
-print(get_url_yadisk('AQAAAABdZ8QwAADLWyqx1NjWGUdGmwJ1WvNE47U', 'https://disk.yandex.ru/i/MxeZNFh36Gcaag'))
-
-
-
